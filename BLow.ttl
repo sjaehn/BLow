@@ -1,0 +1,86 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix urid: <http://lv2plug.in/ns/ext/urid#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ui: <http://lv2plug.in/ns/extensions/ui#> .
+
+#<https://www.jahnichen.de/plugins/lv2/BLow#GUI>
+#        a ui:X11UI ;
+#        lv2:binary <BLow_GUI.so> ;
+#        lv2:extensionData ui:idleInterface , ui:resize ;
+#	       lv2:optionalFeature ui:resize ;
+#        lv2:requiredFeature ui:idleInterface .
+
+<https://www.jahnichen.de/plugins/lv2/BLow> a lv2:Plugin ;
+  a lv2:Plugin, lv2:InstrumentPlugin, doap:Project;
+  doap:name "B.Low";
+  doap:license <http://usefulinc.com/doap/licenses/gpl> ;
+  lv2:binary <BLow.so> ;
+  lv2:microVersion 0 ;
+  lv2:minorVersion 2 ;
+  ui:ui <https://www.jahnichen.de/plugins/lv2/BLow#GUI> ;
+  lv2:optionalFeature lv2:hardRTCapable ;
+  lv2:port [
+		a lv2:InputPort , atom:AtomPort ;
+		atom:bufferType atom:Sequence ;
+		atom:supports midi:MidiEvent ;
+		lv2:designation lv2:control ;
+		lv2:index 0 ;
+		lv2:symbol "midi_in" ;
+		lv2:name "MIDI_in" 
+	] , [
+    a lv2:AudioPort ;
+    a lv2:OutputPort ;
+    lv2:index 1 ;
+    lv2:symbol "audio_out" ;
+    lv2:name "Audio out"
+  ] , [
+    a lv2:InputPort , lv2:ControlPort ;
+    lv2:index 2 ;
+    lv2:symbol "sample" ;
+    lv2:name "Sample" ; 
+    lv2:portProperty lv2:integer, lv2:enumeration ;
+		lv2:scalePoint [ rdfs:label "Unfa" ; rdf:value 0 ] ;
+		lv2:scalePoint [ rdfs:label "Kuchtaa" ; rdf:value 1 ] ;
+    lv2:scalePoint [ rdfs:label "Junkfood2121" ; rdf:value 2 ] ;
+    lv2:scalePoint [ rdfs:label "KataVlogsYT" ; rdf:value 3 ] ;
+    lv2:scalePoint [ rdfs:label "Peridactyloptrix" ; rdf:value 4 ] ;
+    lv2:scalePoint [ rdfs:label "Dleigh" ; rdf:value 5 ] ;
+    lv2:scalePoint [ rdfs:label "YYZJJ" ; rdf:value 6 ] ;
+    lv2:scalePoint [ rdfs:label "Flash_Shumway" ; rdf:value 7 ] ;
+    lv2:scalePoint [ rdfs:label "Shaundoogan" ; rdf:value 8 ] ;
+    lv2:scalePoint [ rdfs:label "Breviceps" ; rdf:value 9 ] ;
+    lv2:default 0 ;
+    lv2:minimum 0 ;
+    lv2:maximum 3 
+  ] , [
+    a lv2:InputPort , lv2:ControlPort ;
+    lv2:index 3 ;
+    lv2:symbol "gain" ;
+    lv2:name "Gain" ;
+    lv2:default 0.0 ;
+    lv2:minimum -70.0 ;
+    lv2:maximum 30.0
+  ] , [
+    a lv2:InputPort , lv2:ControlPort ;
+    lv2:index 4 ;
+    lv2:symbol "tune" ;
+    lv2:name "Tune" ;
+    lv2:portProperty lv2:integer ;
+    lv2:default 0 ;
+    lv2:minimum -12 ;
+    lv2:maximum 12
+  ] , [
+    a lv2:InputPort , lv2:ControlPort ;
+    lv2:index 5 ;
+    lv2:symbol "tune_ct" ;
+    lv2:name "Tune (cents)" ;
+    lv2:portProperty lv2:integer ;
+    lv2:default 0.0 ;
+    lv2:minimum -1.0 ;
+    lv2:maximum 1.0
+  ] .
