@@ -8,6 +8,8 @@ numerous international artists (see b-low).
 
 ## Installation
 
+Choose one of the following options:
+
 a) Install the blow package for your system (once established)
 
 b) Use the latest provided binaries
@@ -19,7 +21,10 @@ copy the BLow.lv2 folder to your lv2 directory (depending on your system setting
 c) Build your own binaries in the following three steps.
 
 Step 1: [Download the latest published version](https://github.com/sjaehn/BLow/releases) of Low. Or clone or
-[download the master](https://github.com/sjaehn/BLow/archive/master.zip) of this repository.
+[download the master](https://github.com/sjaehn/BLow/archive/master.zip) of this repository including the submodules. For git cloning use:
+```
+git clone --recurse-submodules https://github.com/sjaehn/BLow.git
+```
 
 Step 2: Install pkg-config and the development packages for x11, cairo, soundfile, and lv2 if not done yet. If you
 don't have already got the build tools (compilers, make, libraries) then install them too.
