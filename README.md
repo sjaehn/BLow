@@ -7,6 +7,8 @@ numerous international artists (see b-low).
 
 ![screenshot](https://github.com/sjaehn/BLow/blob/master/doc/screenshot.png "Screenshot from B.Low")
 
+Released on April 1, 2022
+
 
 ## Installation
 
