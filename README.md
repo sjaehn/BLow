@@ -5,7 +5,7 @@ It blows out low sounds from below to spice up your music production with a
 special flavour. The high quality samples were gratefully provided by 
 numerous international artists (see b-low).
 
-![screenshot](https://raw.githubusercontent.com/sjaehn/BLow/master/doc/screenshot.png "Screenshot from B.Low")
+![screenshot](https://github.com/sjaehn/BLow/blob/master/doc/screenshot.png "Screenshot from B.Low")
 
 
 ## Installation
