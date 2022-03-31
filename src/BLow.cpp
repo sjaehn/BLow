@@ -1,3 +1,6 @@
+
+#define MINIMP3_IMPLEMENTATION
+
 #include <cmath>
 #include <lv2/lv2plug.in/ns/lv2core/lv2.h>
 #include <lv2/lv2plug.in/ns/ext/atom/atom.h>
