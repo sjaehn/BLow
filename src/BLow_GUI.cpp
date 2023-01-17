@@ -189,7 +189,7 @@ void BLow_GUI::valueChangedCallback(BEvents::Event* event)
 				BWidgets::ValueableTyped<size_t>* vt = dynamic_cast<BWidgets::ValueableTyped<size_t>*> (valueable);
 				if (vt) 
 				{
-					float value = std::min (vt->getValue() - 1, 9ul);
+					float value = std::min (static_cast<float>(vt->getValue() - 1), 9.0f);
 					ui->write_function(ui->controller, BLOW_CONTROLLERS + i, sizeof(float), 0, &value);
 				}
 			}
